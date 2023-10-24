@@ -40,7 +40,7 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
                 if (!$p->cadastrarPessoa($nome, $telefone, $email)) {
                     ?>
                     <div class="aviso">
-                        <img src="/aviso.webp">
+                        <img src="/crud_pdo/aviso.webp">
                         <h4>
                         Email ja esta cadastrado!
                         </h4>
@@ -51,7 +51,7 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
             } else {
                 ?>
                 <div class="aviso">
-                    <img src="/aviso.webp">
+                    <img src="/crud_pdo/aviso.webp">
                     <h4>
                     Prencha todos os campos!
                     </h4>
