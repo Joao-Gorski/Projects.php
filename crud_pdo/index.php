@@ -10,7 +10,7 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cruks</title>
+    <title>crud</title>
     <link rel="stylesheet" href="/crud_pdo/estilo.css">
 </head>
 
@@ -40,7 +40,7 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
                 if (!$p->cadastrarPessoa($nome, $telefone, $email)) {
                     ?>
                     <div class="aviso">
-                        <img src="/crud_pdo/aviso.webp">
+                        
                         <h4>
                         Email ja esta cadastrado!
                         </h4>
@@ -51,7 +51,7 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
             } else {
                 ?>
                 <div class="aviso">
-                    <img src="/crud_pdo/aviso.webp">
+                 
                     <h4>
                     Prencha todos os campos!
                     </h4>
@@ -131,7 +131,7 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
             ?>
         </table>
         
-        <div class="aviso">
+        <div class="test">
          <h4>Ainda não há pessoas cadastradas</h4>
         </div>
        

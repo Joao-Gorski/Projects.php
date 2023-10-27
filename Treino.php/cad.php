@@ -27,9 +27,11 @@ $fim = date("m-d-Y") ;
 
  $padrão = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
 
- echo "<p>Seus ", numfmt_format_currency($padrão, $real, "BRL"), "  equivalem a <strong>" . numfmt_format_currency($padrão, $dolar, "USD") . "</strong></p>" . "<p> Usando a cotação atual do <a href = https://www.bcb.gov.br/> Banco Central</a></p>" ;     
+ echo "<p>Seus ", numfmt_format_currency($padrão, $real, "BRL"), "  equivalem a <strong>" . numfmt_format_currency($padrão, $dolar, "USD") . "</strong></p>";     
  ?>
+ <p class="fot"> Usando a cotação atual do <a href = https://www.bcb.gov.br> Banco Central</a></p>
  <button onclick="javascript:history.go(-1)">Voltar</button>
+ 
     </main>
 </body>
 </html>
