@@ -44,7 +44,7 @@ $segundos =$sobra;
 </section>
 <section>
 <h2>Totalizando tudo</h2>
-<p>Analisando o valor <?=$valor?></p>
+<p>Analisando o valor que voce digitou <strong><?= number_format($valor, 0 , ",", ".")?> </strong> de  segundos resulto em:</p>
 <ul>
   <li><?=$semana ?> semanas</li>
   <li><?=$dias ?> dias</li>
