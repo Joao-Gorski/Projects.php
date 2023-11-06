@@ -3,8 +3,8 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Treino_PhP</title>
-        <link rel="stylesheet" href="/Treino.php/style.css">
+        <title>Conversor</title>
+        <link rel="stylesheet" href="./style.css">
 </head>
 <body>
             <section>

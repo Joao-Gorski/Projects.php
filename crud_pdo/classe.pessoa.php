@@ -29,9 +29,11 @@ public function buscarDados()
 //Funçao para cadastrar pessoas
 public function cadastrarPessoa($nome, $telefone, $email)
 {
+    //email
      $cmd = $this->pdo->prepare("SELECT id from pessoa WHERE email = :e");
      $cmd->bindValue(":e", $email);
      $cmd->execute();
+   
      if($cmd->rowCount() > 0)//se for maior ja existe 
      {
         return false;

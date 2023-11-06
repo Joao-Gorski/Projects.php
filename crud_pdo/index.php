@@ -11,7 +11,7 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>crud</title>
-    <link rel="stylesheet" href="/crud_pdo/estilo.css">
+    <link rel="stylesheet" href="./estilo.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
     if (isset($_POST['nome'])) //CLICOU NO BOTAO CADASTRAR OU EDITAR
     {
         //----------------------EDITAR---------------------------
-                                               if (isset($_GET['id_up']) && !empty($_GET['id_up'])) {
+        if (isset($_GET['id_up']) && !empty($_GET['id_up'])) {
             $id_update = addslashes($_GET['id_up']);
             $nome = addslashes($_POST['nome']);
             $telefone = addslashes($_POST['telefone']);
@@ -27,8 +27,10 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
             if (!empty($nome) && !empty($telefone) && !empty($email)) {
                 //EDITAR
                 $p->atualizarDados($id_update, $nome, $telefone, $email);
-                header("location: index.php");
-            } 
+                // header("location: index.php");
+                echo '<script>window.location = "index.php";</script>';
+                exit;
+            }
         }
         // CADASTRAR
         else {
@@ -38,26 +40,22 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
             $email = addslashes($_POST['email']);
             if (!empty($nome) && !empty($telefone) && !empty($email)) {
                 if (!$p->cadastrarPessoa($nome, $telefone, $email)) {
-                    ?>
+    ?>
                     <div class="aviso">
-                        
                         <h4>
-                        Email ja esta cadastrado!
+                            Email já esta cadastrado!
                         </h4>
                     </div>
-                    <?php
-                     
+                <?php
                 }
             } else {
                 ?>
                 <div class="aviso">
-                 
                     <h4>
-                    Prencha todos os campos!
+                        Prencha todos os campos!
                     </h4>
                 </div>
-                 
-                <?php
+    <?php
             }
         }
     }
@@ -74,9 +72,9 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
     <section id-="esquerda">
         <form method="POST">
             <h2>SE CADASTRE <?php
-           echo "\u{1F418}"
-            ?> </h2> 
-            
+                            echo "\u{1F418}"
+                            ?> </h2>
+
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome" value="<?php if (isset($res)) {
                                                                 echo $res['nome'];
@@ -122,26 +120,24 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
                         <a href="index.php?id_up=<?php echo $dados[$i]['id']; ?>">Editar</a>
                         <a href="index.php?id=<?php echo $dados[$i]['id']; ?>">excluir</a>
                     </td>
-            <?php
+                <?php
                     echo "</tr>";
                 }
-            } 
-         else 
-     {
-            ?>
+            } else {
+                ?>
         </table>
-        
+
         <div class="test">
-         <h4>Ainda não há pessoas cadastradas</h4>
+            <h4>Ainda não há pessoas cadastradas</h4>
         </div>
-       
-        <?php
-    }
+
+    <?php
+            }
     ?>
 
     </section>
-    
-    
+
+
 </body>
 
 </html>
@@ -152,7 +148,9 @@ $p = new Pessoa("crudpdo", "localhost", "root", "");
 if (isset($_GET['id'])) {
     $id_pessoa = addslashes($_GET['id']);
     $p->excluirPessoa($id_pessoa);
-    header("location: index.php");
+    // header("location: index.php");
+    echo '<script>window.location = "index.php";</script>';
+    exit;
 }
 
 

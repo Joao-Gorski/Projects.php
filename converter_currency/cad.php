@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treino_PhP</title>
-    <link rel="stylesheet" href="/Treino.php/style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <main>
@@ -25,7 +25,7 @@ $fim = date("m-d-Y") ;
 
  $dolar = $real / $cotação;
 
- $padrão = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+  $padrão = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
 
  echo "<p>Seus ", numfmt_format_currency($padrão, $real, "BRL"), "  equivalem a <strong>" . numfmt_format_currency($padrão, $dolar, "USD") . "</strong></p>";     
  ?>
